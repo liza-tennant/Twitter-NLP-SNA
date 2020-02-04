@@ -12,7 +12,7 @@ This code collects all followers_IDs of each of the elites, saving them in separ
 
 import tweepy
 # import json  # for formatting output files
-import keys  # this is my own file with 4 keys, stored in /Users/lizakarmannaya
+import keys  # this is my own file with 4 keys, stored in home directory
 import pandas as pd
 import time 
 import csv
@@ -28,7 +28,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 ########### 2 - defining a function to list all followers_IDs of the elites ###############
 
-#### from Sylwester & Perver (2015) ######
+#### code adapted from Sylwester & Perver (2015) ######
 # NB the below takes ages - 30,000 follower_ids per 15 mins
 # useful to get follower_IDs because: anonymised(ish) and the id never changes
 def collect_followers(elite):
