@@ -10,7 +10,7 @@ This code imports elites.csv and filters it into 'my_elites.csv', which will be 
 """
 
 import tweepy
-import keys  # this is my own file with 4 keys, stored in /Users/lizakarmannaya
+import keys  # this is my own file with 4 keys, stored in home directory
 import pandas as pd
 import time 
 import csv
