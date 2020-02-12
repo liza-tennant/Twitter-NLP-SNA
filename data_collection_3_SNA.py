@@ -32,7 +32,7 @@ G = nx.Graph()
 
 followers_lauralascau = pd.read_csv('followers_lauralascau.csv', header=None)  
 # NB work out how to read file line by line!!
-followers_lauralascau # df with 1 column, indexed 0
+followers_lauralascau # df with 217 rows, 1 column, indexed 0
 G.add_nodes_from(followers_lauralascau[0])  # this is a pd Series
 G.add_node('@lauralascau')
 
@@ -54,8 +54,8 @@ G.edges()
 # returns list of tuples representing the edges,
 # in which each tuple shows the nodes that are present on that edge
 
-G.number_of_edges() #8829
-G.number_of_nodes() #8830
+G.number_of_edges() #217
+G.number_of_nodes() #218
 
 
 # storing metadata on the graph
@@ -66,11 +66,49 @@ G.number_of_nodes() #8830
 # returns list of 2 tuples, in which the first element is the node, and
 # the second is a dictionary where key: value pairs correspond to our meta-data
 
+#add followers of DuncanBrumby
+collect_followers('DuncanBrumby')
+followers_DuncanBrumby = pd.read_csv('followers_DuncanBrumby.csv', header=None)  
+# followers_DuncanBrumby #290 rows
+G.add_node('@DuncanBrumby') #this may be redundant 
+for node in followers_DuncanBrumby[0]:
+    G.add_edge('@DuncanBrumby', node)
+
+    #if follower not in G.nodes():
+        #G.add_nodes_from(followers_DuncanBrumby[0])  # this is a pd Series
+
+#for node in G.nodes():
+#    if node in followers_DuncanBrumby:
+#        if node != '@DuncanBrumby':
+#            G.add_edge('@DuncanBrumby', node)
+
+G.number_of_nodes() #468
+G.number_of_edges() #509
+
+collect_followers('AnnaCox_')
+followers_AnnaCox_ = pd.read_csv('followers_AnnaCox_.csv', header=None)  
+G.add_node('@AnnaCox_') #this may be redundant 
+for node in followers_AnnaCox_[0]:
+    G.add_edge('@AnnaCox_', node)
+
 # drawing the graph
-nx.draw(G) #takes a while
-plt.show()
+nx.draw(G, node_size=20, node_color='r', edge_color='black', linewidths=0.3, alpha=0.6, pos=nx.spring_layout(G)) #takes a while
+
+#nx.draw_circular(G, node_size=10)
+
+nx.draw_networkx(G, with_labels=False, node_size=10, width=0.5, node_color='r', edge_color='b', alpha=0.5, labels=None)	
+
+#plt.draw()
+#plt.show()
 nx.draw(G, pos=nx.circular_layout(G), node_color='r', edge_color='b')
 
+G.clear()
+G.nodes() #empty
+plt.clf()
+plt.savefig("out.png")
+
+S = nx.Graph()
+S.add_edge('one', 'two') # hence dont need to create nodes first - they are created automatically when I create edges 
 nx.draw(S)
 
 petersen = nx.petersen_graph()

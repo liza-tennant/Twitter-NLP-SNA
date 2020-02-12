@@ -1,16 +1,16 @@
 """
 data_collection_1.py 
-This code imports elites.csv and filters it into 'my_elites.csv', which will be used subsequently.
+This code imports elites_original.csv and filters it into 'my_elites.csv', which will be used subsequently.
 
 1 - authenticaion
-2 - import csv 'elites_filtered.csv'
+2 - import csv 'elites_original.csv'
 3 - edit this and save it into 'my_elites.csv'
 
 @author: lizakarmannaya
 """
 
 import tweepy
-import keys  # this is my own file with 4 keys, stored in home directory
+import keys  # this is my own file with 4 keys, stored in /Users/lizakarmannaya
 import pandas as pd
 import time 
 import csv
@@ -31,47 +31,55 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 # message at the command line.
 
 
-# ################# 2 - Importing elites_filtered.csv ###############
+# ################# 2 - Importing elites_original.csv ###############
 
-# read elites_filtered.csv
-elites_filtered = pd.read_csv('elites_filtered.csv')
-elites_filtered.head()
-elites_filtered.tail()
-elites_filtered.shape # 400, 6
+# read elites_original.csv - a list of all MPs, parties, party leaders and MEPs who have Twitter accounts
+elites_original = pd.read_csv('elites_original.csv')
+print(elites_original.head())
+print(elites_original.tail())
+print(elites_original.shape) # 467, 6
 
 
-################# 3 - filter elites_filtered more and turn it into my_elites.csv #################
+################# 3 - filter elites_original and turn it into my_elites.csv #################
 # eg surveys_df[surveys_df.year == 2002]
 # eg surveys_df[(surveys_df.year >= 1980) & (surveys_df.year <= 1985)]
-my_elites = elites_filtered[elites_filtered.Validated=='y'] # exclude non-validates accounts
-my_elites.shape #366, 6 
+my_elites = elites_original[elites_original.Validated=='y'] # exclude non-validates accounts
+my_elites.shape # 426, 6 
 my_elites = my_elites[my_elites.party !='Speaker'] # exclude Speaker (non-partisan)
-my_elites.shape #365, 6 
+my_elites.shape # 425, 6 
+## also exclude 'Independent' party elites?
 
 # add column followers_count to my_elites dataframe
 followers_counts = []
 for elite in my_elites['twitter_name']: 
-    count = api.get_user(elite).followers_count
-    followers_counts.append(count)
+    try: 
+        print(f'fetching user {elite}')
+        count = api.get_user(elite).followers_count
+        print(f'{elite} has {count} followers')
+        followers_counts.append(count)
+    except:
+        print(f'error fetching user {elite}, adding count of -1')
+        followers_counts.append(-1) 
+        # to allow us to filter out those whose followers_cound could not be retreived later
 
-followers_counts[0:10]
+followers_counts[0:10] # check list
 my_elites['followers_count'] = followers_counts
-my_elites.head()
-my_elites['followers_count']
-# build histograms of followers.counts using plt
-plt.hist(my_elites['followers_count'])
-my_elites['followers_count'].describe
-my_elites['followers_count'].mean() # 58933.24931506849
-my_elites['followers_count'].median() # 18322.0
-my_elites['followers_count'].min() # 1214
-my_elites['followers_count'].max() # 2,367,748
+my_elites.shape # 425, 7
+# filter out those with followers_count = '-1'
+my_elites = my_elites[my_elites.followers_count != -1] 
+print(my_elites.shape) # 424, 7
 
-# my_elites = pd.read_csv('my_elites.csv', index_col=0)
-# my_elites.shape #365, 7
-# TO DO: exclude elites who have <2000 followers (following Barbera)
+# descriptive stats of my_elites['followers_count']
+plt.hist(my_elites['followers_count'], bins=100)
+print(my_elites['followers_count'].describe)
+print(my_elites['followers_count'].mean()) # 58021.29481132075
+print(my_elites['followers_count'].median()) # 17783.5
+print(my_elites['followers_count'].min()) # 1210
+print(my_elites['followers_count'].max()) # 2370402
+
+# exclude elites who have <2000 followers (following Barbera)
 my_elites = my_elites[my_elites.followers_count >2000]
-my_elites.shape #362, 7
-my_elites.head()
+print(my_elites.shape) # 420, 7
 
 #save the new, completely filtered dataframe to 'my_elites.csv'
 my_elites.to_csv('my_elites.csv')
