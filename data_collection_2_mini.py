@@ -13,7 +13,7 @@ This code collects all followers_IDs of each of the elites, saving them in separ
 
 import tweepy
 # import json  # for formatting output files
-import keys  # this is my own file with 4 keys, stored in /Users/lizakarmannaya
+import keys  # this is my own file with 4 keys, stored in home directory
 import pandas as pd
 import time 
 import csv
@@ -47,7 +47,7 @@ def collect_followers(elite):
     # NB check that 'elite' is a string??? - use str(elite) ?? 
     
     # set  up file to save the followers into
-    filePath = os.path.join(r"/Users/lizakarmannaya/followers_" + elite + '.csv')
+    filePath = os.path.join(r"/.../.../followers_" + elite + '.csv')
     #filePath = os.path.join(r"/home/ldw01/followers_" + elite + '.csv')
     with open(filePath, 'w') as f:
         # write data in file as long as Twitter limit has not been reached
