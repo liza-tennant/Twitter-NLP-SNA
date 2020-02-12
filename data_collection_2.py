@@ -12,7 +12,7 @@ This code collects all followers_IDs of each of the elites, saving them in separ
 
 import tweepy
 # import json  # for formatting output files
-import keys  # this is my own file with 4 keys, stored in /Users/lizakarmannaya
+import keys  # this is my own file with 4 keys, stored in home directory
 import pandas as pd
 import time 
 import csv
@@ -38,7 +38,7 @@ def collect_followers(elite):
     # NB check that 'elite' is a string??? - use str(elite) ?? 
     
     # set  up file to save the followers into
-    filePath = os.path.join(r"/Users/lizakarmannaya/followers_" + elite + '.csv')
+    filePath = os.path.join(r"/.../.../followers_" + elite + '.csv')
     with open(filePath, 'w') as f:
         # write data in file as long as Twitter limit has not been reached
         while True:
@@ -85,7 +85,7 @@ my_elites.loc[lambda df: my_elites['twitter_name'] == 'BorisJohnson'] #1530638
 
 # how many followers do we need to collect from the Twitter API?
 my_elites['followers_count'].sum() # 24,594,916
-# divided by 30000 followers per hour = 819.831 hours = 34 days
+# divided by 300000 followers per hour = 81.9831 hours = 3.4 days
 
 
 ## NB maybe split this the next stage into parts, just in case it crashes? 
