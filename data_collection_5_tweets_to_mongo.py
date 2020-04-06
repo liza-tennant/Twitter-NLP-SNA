@@ -1,5 +1,5 @@
 """
-data_collection_7_tweets_to_mongo.py 
+data_collection_5_tweets_to_mongo.py 
 
 This code goes through all followers in  filters them by activity
 
@@ -7,7 +7,6 @@ This code goes through all followers in  filters them by activity
 2 - connect to MongoDB
 3 - read in twitter user_ids (and add to Mongodb if first run)
 4 - collect 200 most recent tweets from each account in db 
-5 - cleaning users
 
 @author: lizakarmannaya
 """
@@ -381,9 +380,3 @@ print(document.acknowledged)
 
 connection.close()
 
-
-
-
-######## 5 - cleaning users - see O'Reilly useful notes ###
-
-#results[0]._json.keys()
