@@ -1,9 +1,9 @@
 """
-data_collection_5_random_sampler.py 
+data_collection_4_random_sampler.py 
 
-This code takes an input csv (largest_cc_LEFT_nodelist_filtered.csv or 
-largest_cc_RIGHTT_nodelist_filtered.csv)with user_ids (nodes from the graph), 
-randomly samples 100,000 from them and saves the sample as sample1_LEFT.csv or sample1_RIGHT.csv. 
+This code takes an input csv (largest_cc_LEFT_nodelist.csv or 
+largest_cc_RIGHTT_nodelist.csv)with user_ids (nodes from the graph), randomly samples 
+100,000 from them and saves the sample as sample1_LEFT.csv or sample1_RIGHT.csv. 
 
 1 - draw random samples of 100000 from left CC nodelist (user_id lists) & save as sample1_<...>.csv 
 2 - REPEAT FOR largest_cc_RIGHT_nodelist_filtered.csv
@@ -22,7 +22,7 @@ from random import randrange
 #adapted from Sylwester & Purver (2015)
 
 #input file
-inputFile = "largest_cc_LEFT_nodelist_filtered.csv"
+inputFile = "largest_cc_LEFT_nodelist.csv"
 
 
 #output files
