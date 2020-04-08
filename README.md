@@ -17,7 +17,7 @@ All code is executed in IPython, hence executing a line such as '>>> list_name' 
   10. 
   
 ##Packages required: 
-'''
+'
   import pymongo
   from pymongo import MongoClient
   import json 
@@ -30,4 +30,4 @@ All code is executed in IPython, hence executing a line such as '>>> list_name' 
   import datetime
   from datetime import datetime, timedelta
   from email.utils import parsedate_tz
-'''
+'
