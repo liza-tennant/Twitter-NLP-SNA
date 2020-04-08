@@ -1,5 +1,5 @@
 # Twitter-NLP-SNA
-MPhil project at the University of Cambridge, analysing political behaviour and communication on Twitter using Social Network Analysis and Natural Language Processing. 
+This is the code used in my MPhil project at the University of Cambridge, analysing political behaviour and communication on Twitter using Social Network Analysis and Natural Language Processing. 
 
 Note: 
 All code is executed in IPython, hence executing a line such as '>>> list_name' prints out the entire list titled 'list_name', without requiring a 'print(list_name)' statement. 
