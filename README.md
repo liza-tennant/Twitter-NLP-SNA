@@ -17,16 +17,16 @@ This collection of code does the following:
   10. 
   
 Packages required: 
-  import pymongo
-  from pymongo import MongoClient
-  import json 
-  import keys
-  import pandas as pd
-  import tweepy
-  import timeit
-  import time
-  import pprint
-  import datetime
-  from datetime import datetime, timedelta
-  from email.utils import parsedate_tz
+  #import pymongo
+  #from pymongo import MongoClient
+  #import json 
+  #import keys
+  #import pandas as pd
+  #import tweepy
+  #import timeit
+  #import time
+  #import pprint
+  #import datetime
+  #from datetime import datetime, timedelta
+  #from email.utils import parsedate_tz
 
