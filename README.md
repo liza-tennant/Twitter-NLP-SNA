@@ -4,7 +4,7 @@ This is the code used in my MPhil project at the University of Cambridge, analys
 Note: 
 All code is executed in IPython, hence executing a line such as '>>> list_name' prints out the entire list titled 'list_name', without requiring a 'print(list_name)' statement. 
 
-This collection of code does the following: 
+##This collection of code does the following: 
   1. parse in a pre-made csv file of elites (politicians, 
   2. connect to the Twitter API (using a private set of keys, which will need to be re-created if this code were to be replicated) 
   3. collect all the followers of each of the elites
@@ -16,17 +16,18 @@ This collection of code does the following:
   9. 
   10. 
   
-Packages required: 
-  #import pymongo
-  #from pymongo import MongoClient
-  #import json 
-  #import keys
-  #import pandas as pd
-  #import tweepy
-  #import timeit
-  #import time
-  #import pprint
-  #import datetime
-  #from datetime import datetime, timedelta
-  #from email.utils import parsedate_tz
-
+##Packages required: 
+'''
+  import pymongo
+  from pymongo import MongoClient
+  import json 
+  import keys
+  import pandas as pd
+  import tweepy
+  import timeit
+  import time
+  import pprint
+  import datetime
+  from datetime import datetime, timedelta
+  from email.utils import parsedate_tz
+'''
