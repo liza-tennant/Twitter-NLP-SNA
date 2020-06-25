@@ -20,7 +20,8 @@ All code is executed in IPython, hence executing a line such as '>>> list_name' 
 - import pymongo
 - from pymongo import MongoClient
 - import json 
-- import keys #this is a file with my keys for the Twitter API - will need to be re-created by anyone willing to replicate API access, and their own keys will need to be obtained from the Twitter developers website
+- import keys 
+-- #this is a file with my keys for the Twitter API - will need to be re-created by anyone willing to replicate API access, and their own keys will need to be obtained from the Twitter developers website
 - import pandas as pd
 - import tweepy
 - import timeit
