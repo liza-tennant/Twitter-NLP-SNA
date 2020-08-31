@@ -14,20 +14,8 @@ All code is executed in IPython, hence executing a line such as '>>> list_name' 
   7. apply POS tagging to find nouns, proper nouns etc. in Tweets; calculate noun proportions for main analysis 
   8. calculate network centrality values for all nodes; store values for main analysis 
   9. clean words in tweets (lowercase, drop 's etc.), find most frequently used ones and visualise
-  10. repeat word analysis after excluding pronouns 
-  11. 
+  10. run additional linguistic analyses - Noun proportions without Pronouns; length of tweets on LEFT vs. RIGHT, amount of Proper Noun pairs on LEFT vs. RIGHT
+  11. repeat word analysis after excluding all pronouns, 'coronavirus' words and emoticons/emoji from both Common and Proper Noun tags 
   12. visualise words used most frequently in the profile descriptions of 100 most central users 
   
-## Packages required: 
-- import pymongo
-- from pymongo import MongoClient
-- import json 
-- import keys -- #this is a file with my keys for the Twitter API - will need to be re-created by anyone willing to replicate API access, and their own keys will need to be obtained from the Twitter developers website
-- import pandas as pd
-- import tweepy
-- import timeit
-- import time
-- import pprint
-- import datetime
-- from datetime import datetime, timedelta
-- from email.utils import parsedate_tz
+## Packages required: see package imports at the top of every file
