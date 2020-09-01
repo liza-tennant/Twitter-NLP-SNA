@@ -1,9 +1,9 @@
 # Twitter-NLP-SNA
 This is the code used in my MPhil project at the University of Cambridge, analysing political behaviour and communication on Twitter using Social Network Analysis and Natural Language Processing. 
 
-Note: 
-Data collection from Twitter requires a set of API keys - these can be obtained from the Twitter API website. The code presented here imports a document called 'keys', containing these - a new set of keys can be included in a document like this to make this code executable. 
-All code is executed in IPython, hence executing a line such as '>>> list_name' prints out the entire list titled 'list_name', without requiring a 'print(list_name)' statement. 
+Notes:
+- Data collection from Twitter requires a set of API keys - these can be obtained from the Twitter API website. The code presented here imports a document called 'keys', containing these - a new set of keys can be included in a document like this to make this code executable. 
+- All code is executed in IPython, hence executing a line such as '>>> list_name' prints out the entire list titled 'list_name', without requiring a 'print(list_name)' statement. 
 
 ## This collection of code does the following: 
 
