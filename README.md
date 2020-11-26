@@ -23,4 +23,8 @@ Notes:
   
 Then, analysis was performed on the resulting data in R - the code for this is available in the analysis_R_code folder. 
   
-## Packages required: see package imports at the top of every file
+## Packages required: 
+see package imports at the top of every file
+
+## Associated article/publication: 
+pending 
