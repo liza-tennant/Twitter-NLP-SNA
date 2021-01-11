@@ -27,6 +27,6 @@ Then, analysis was performed on the resulting data in R - the code for this is a
 see package imports at the top of every file
 
 ## Associated article/publication: 
-Pre-print available: https://psyarxiv.com/v6qx5
-Associated files are available on the OSF: https://osf.io/dr7bk/?view_only=27f913c49c7b48019484f784b5db4135  
-Journal publication penidng
+- Pre-print available: https://psyarxiv.com/v6qx5; 
+- Associated files are available on the OSF: https://osf.io/dr7bk/?view_only=27f913c49c7b48019484f784b5db4135;
+- Journal publication penidng
